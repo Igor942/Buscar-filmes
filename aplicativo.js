@@ -2,9 +2,9 @@ function pesquisar() {
     // Obtém a seção HTML onde os resultados serão exibidos
     let section = document.getElementById("resultados-pesquisa");
 
-    let campoPesquisa = document.getElementById("campo-pesquisa").value
+    let campoPesquisa = document.getElementById("campo-pesquisa").value;
 
-    if(!campoPesquisa){
+    if (!campoPesquisa) {
         section.innerHTML = "<p>Não foi encontrado resultado para a pesquisa"
         return
     }
@@ -19,11 +19,12 @@ function pesquisar() {
 
     // Itera sobre cada dado da lista de dados
     for (let dado of dados) {
-        titulo = dado.descricao.toLocaleLowerCase
-        descricao = dado.descricao.toLocaleLowerCase
-        if (titulo.includes(campoPesquisa) || descricao.includes) {
+        titulo = dado.descricao.toLocaleLowerCase()
+        descricao = dado.descricao.toLocaleLowerCase()
+        if (titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa)) {
             // Cria um novo elemento HTML para cada resultado
-            resultados += `
+            resultados += 
+            `
         <div class="item-resultado">
             <h2>
                 <a href="#" target="_blank">${dado.titulo}</a>
@@ -34,9 +35,9 @@ function pesquisar() {
     `;
         }
     }
-    if (!resultado){
-        resultado ="<p>Não foi encontrado resultado para a pesquisa!"
-        return
+    if (!resultados) {
+        resultados = "<p>Não foi encontrado resultado para a pesquisa!"
+        
     }
 
     // Atribui os resultados gerados à seção HTML
